@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Vault",
+  "version": "1.2.0",
+  "description": "Modo foco com bloqueio real por whitelist.",
+
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "public/icons/icon16.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
+    }
+  },
+
+  "options_page": "src/options/options.html",
+
+  "background": {
+    "service_worker": "src/background/service_worker.js",
+    "type": "module"
+  },
+
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "tabs",
+    "webNavigation",
+    "alarms"
+  ],
+
+  "host_permissions": ["<all_urls>"],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["src/blocked/blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  }
+}
